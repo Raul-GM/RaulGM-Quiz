@@ -5,3 +5,5 @@ body{
 #page-wrap:after{ content: "Smartphone layout"; }
 h2 span, section h3{ display: none; }
 footer, input{ font-size: large; }
+
+.author img{ width: 180px; }
