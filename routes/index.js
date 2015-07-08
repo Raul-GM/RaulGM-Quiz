@@ -5,11 +5,11 @@ var quizController = require('../controllers/quiz_controller');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'RaulGM-Quiz' });
+  res.render('index', { title: 'RaulGM-Quiz'});
 });
 
 //Autoload de comandos con :quizID
-router.param('quizId', quizController.load); 
+router.param('quizId', 							quizController.load); 
 
 //Definición de rutas de quizes
 router.get('/quizes', 							quizController.index);
@@ -23,5 +23,8 @@ router.get('/author', function(req, res, next) {
   	avatar: 'avatar.jpg'
   });
 });
+
+//Búsqueda de preguntas
+router.get('/quizes/search?:search?',			quizController.search);
 
 module.exports = router;

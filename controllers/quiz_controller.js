@@ -12,13 +12,14 @@ exports.load = function(req, res, next, quizId){
 
 //GET /quizes
 exports.index = function(req, res){
+	console.log("INDEX!!!");
 	models.Quiz.findAll().then(function(quizes){
-		res.render('quizes/index', { quizes: quizes});
+		res.render('quizes/index', { quizes: quizes, resultado: ''});
 	}).catch(function(error){next(error);})
 };
 
 // GET /quizes/:id
-exports.show = function(req, res){
+exports.show = function(req, res){	
 	res.render('quizes/show', { quiz: req.quiz});
 };
 
@@ -30,3 +31,19 @@ exports.answer = function(req, res){
 	}
 	res.render('quizes/answer', {quiz:req.quiz, respuesta: resultado});
 };
+
+//Búsqueda de preguntas
+exports.search = function(req, res){
+	console.log("BÚSQUEDA DE PREGUNTAS: " + req.query.search);
+	var busqueda = '%'+req.query.search.replace(/ /g, '%')+'%';
+
+	models.Quiz.findAll({
+		where:{
+			pregunta:{
+				$like: busqueda
+			}
+		}
+	}).then(function(quizes){
+		res.render('quizes/index', { quizes: quizes, resultado: req.query.search});
+	}).catch(function(error){next(error);})
+}
