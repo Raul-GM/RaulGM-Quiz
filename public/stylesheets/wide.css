@@ -1,9 +1,10 @@
-body{ background: #999; }
-#page-wrap:after{ content: "Wide layout"; }
+
 nav{
 	float: left;
 	width: 15%;
-	height: 200px;
+	height: 100%;
+	box-shadow: 5px 0px 4px rgba(0,0,0,.14),5px 0px 8px rgba(0,0,0,.28);
+	z-index: 10;
 }
 nav span{ margin: 0px 100px 0px 0px; }
 section { 

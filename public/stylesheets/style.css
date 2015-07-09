@@ -1,23 +1,60 @@
-*{margin:0; padding:0;}
-body { font: 16px Georgia, serif; }
-#page-wrap{ 
-	margin: 2% auto;
-	color: white;
+/*
+.dark-primary-color    { background: #1976D2; }
+.default-primary-color { background: #2196F3; }
+.light-primary-color   { background: #BBDEFB; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF4081; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+*/
+*                    { margin: 0; padding: 0; }
+html{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
-#page-wrap > .main{ 
-	border: 1px solid #999;
-	padding: 1%;
-	margin-bottom: 1px;
-	color: black;
+body                 { 
+	font: 16px Georgia, serif; 
+	background: #2196F3;
+	width: 100%;
+	height: 100%;
 }
-section > div{  padding: 20px; }
-header, nav, section, footer{
-	background: #eee;
-	text-align: center;
-}
-nav span{ margin: 0px 10px 0px 0px;}
 
-.author img{
-	border-radius: 100%;
-	margin: 10px 0px;
+header{
+	background: #1976D2;
+	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+	color: #FFFFFF;
+	z-index: 20;
+	height: 50px;
+	position: relative;
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-webkit-justify-content: space-between; /* Safari 6.1+ */
+    justify-content: space-between;
+    -webkit-align-items: center;
+   	align-items: center;
 }
+header h2,
+header form{
+	margin: 0 20px;
+}
+
+#page-wrap{
+	display: block;
+	position: relative;
+	width: 100%;
+	  height: calc(100% - 68px);
+}
+nav{ background: #1976D2; }
+
+section > div        { padding: 20px; }
+footer               { background: #eee; text-align: center;}
+
+#ErrorMsgs           { color: #f61; font-size: smaler}
+.right 				 {float: right;}
+
+.quiz_img 			 { height: 150px; float: left;}
