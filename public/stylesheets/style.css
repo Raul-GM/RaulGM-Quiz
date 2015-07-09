@@ -27,7 +27,7 @@ header{
 	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 	color: #FFFFFF;
 	z-index: 20;
-	height: 50px;
+	height: 60px;
 	position: relative;
 	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
 	display: -ms-flexbox;  /* TWEENER - IE 10 */
@@ -39,17 +39,53 @@ header{
    	align-items: center;
 }
 header h2,
-header form{
-	margin: 0 20px;
+header form{ margin: 0 20px; }
+header form input{ margin-left: 10px; }
+
+.mdText{
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #FF4081;
+	padding: 5px;
+	outline-width: 0px;
+	color: #FFFFFF;
+}
+.mdText:focus{ border-bottom: 2px solid #FF4081; }
+
+.mdFlatButton{
+	border: none;
+	background: #FF4081;
+	color: #FFFFFF;
+	padding: 5px 8px;
+	font-size: 16px;
+	cursor: pointer;
 }
 
 #page-wrap{
 	display: block;
 	position: relative;
 	width: 100%;
-	  height: calc(100% - 68px);
+	  height: calc(100% - 78px);
 }
+
+a{ text-decoration: none; }
+
 nav{ background: #1976D2; }
+nav span,
+nav span a{
+	height: 45px;
+	line-height: 45px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+nav span:hover{ background: #B2EBF2; }
+nav span:active{ background: #B6B6B6; }
+nav span a{ 
+	margin-left: 20px;
+	color: #212121;
+}
+nav span a:active{ color: #FFFFFF; }
 
 section > div        { padding: 20px; }
 footer               { background: #eee; text-align: center;}
@@ -58,3 +94,19 @@ footer               { background: #eee; text-align: center;}
 .right 				 {float: right;}
 
 .quiz_img 			 { height: 150px; float: left;}
+
+::-webkit-input-placeholder {
+   color: #B6B6B6;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #B6B6B6;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #B6B6B6;  
+}
+
+:-ms-input-placeholder {  
+   color: #B6B6B6;  
+}
