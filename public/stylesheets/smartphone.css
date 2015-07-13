@@ -1,9 +1,29 @@
-body{ 
-	background: #333; 
-	font-size: xx-large;
+header{
+	height: 120px;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around; /* Safari 6.1+ */
+    justify-content: space-around;
 }
-#page-wrap:after{ content: "Smartphone layout"; }
+header h2{ font-size: 18px; }
+.mdText{ font-size: 12px; }
+.mdFlatButton{ font-size: 14px; }
 h2 span, section h3{ display: none; }
-footer, input{ font-size: large; }
-
+nav{
+	text-align: center;
+	font-size: 14px;
+}
+nav span{
+	display: inline-block;
+	height: 40px;
+  	line-height: 40px;
+}
+nav span a{  margin-right: 20px; }
+#page-wrap { height: calc(100% - 120px); }
+section{ height: calc(100% - 115px); }
+footer{
+	font-size: 14px;
+	height: 35px;
+	line-height: 35px;
+}
 .author img{ width: 180px; }

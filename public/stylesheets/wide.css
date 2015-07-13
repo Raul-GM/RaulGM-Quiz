@@ -9,9 +9,10 @@ nav{
 nav span{ width: 200px; }
 section { 
 	float: right;
-	width: calc(100% - 200px);
-	height: 200px;
+	width: calc(100% - 240px);
+	height: calc(100% - 40px);
 }
+section .title{ font-size: 30px; margin: 20px; }
 footer{
 	clear: both;
 	display: block;

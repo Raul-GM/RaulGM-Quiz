@@ -1,8 +1,8 @@
 <% if(resultado != ''){ %>
-	<h3>Resultados para la búsqueda: </h3><%= resultado %>
+	<div class="search"><h3>Resultados para la búsqueda: </h3><span><%= resultado %><span></div>
 <% } %>
-<table>
+<div class="questions">
 	<% 	var i; for(i=0;i<quizes.length; i++){ %>
-		<tr><td><a href="/quizes/<%=quizes[i].id %>" ><%= quizes[i].pregunta %></a></td></tr>
+		<a class="card" href="/quizes/<%=quizes[i].id %>"> <span><%= quizes[i].pregunta %></span></a>
 	<% } %>
-</table>
+</div>

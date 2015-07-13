@@ -1,5 +1,10 @@
 <form action="/quizes/<%= quiz.id %>/answer" method="get">
-	Pregunta: <%= quiz.pregunta %><p>
-	<input type="text" name="respuesta" placeholder="Responda aquí"/>
-	<input type="submit" value="Enviar"/>
+	<div class="card big">
+		<h1>Pregunta:</h1> 
+		<p><%= quiz.pregunta %></p>
+		<div class="inputs">
+			<input type="text" name="respuesta" placeholder="Responda aquí" class="mdText dark"/>
+			<input type="submit" value="Enviar" class="mdFlatButton"/>
+		</div>
+	</div>
 </form>
