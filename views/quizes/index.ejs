@@ -3,7 +3,10 @@
 <% } %>
 <div class="questions">
 	<% 	var i; for(i=0;i<quizes.length; i++){ %>
-		<a class="card" href="/quizes/<%=quizes[i].id %>"> <span><%= quizes[i].pregunta %></span></a>
+		<a class="card" href="/quizes/<%=quizes[i].id %>"> 
+			<span><%= quizes[i].pregunta %></span>
+			<a href="/quizes/<%=quizes[i].id %>/edit" class="mdRoundedButton small cardActions">E</a>
+		</a>
 	<% } %>
 </div>
 <a href="/quizes/new" class="mdRoundedButton addQuestion">+</a>

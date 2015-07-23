@@ -1,0 +1,6 @@
+<div class="card big">
+	<h1>Editar pregunta:</h1> 
+	<form action="/quizes/<%= quiz.id %>?_method=put" method="post">
+		<% include _forms.ejs %>
+	</form>
+</div>

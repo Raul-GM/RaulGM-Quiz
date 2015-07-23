@@ -76,6 +76,12 @@ header form input{ margin-left: 10px; }
 	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
+.mdRoundedButton.small{
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 22px;
+}
 .mdRoundedButton:hover{
 	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 	box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
