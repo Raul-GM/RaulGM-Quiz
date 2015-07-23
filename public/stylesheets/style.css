@@ -56,10 +56,35 @@ header form input{ margin-left: 10px; }
 .mdFlatButton{
 	border: none;
 	background: #FF4081;
-	color: #FFFFFF;
+	color: #FFFFFF!important;
 	padding: 5px 8px;
 	font-size: 16px;
 	cursor: pointer;
+}
+.mdRoundedButton{
+	border: none;
+	border-radius: 100%;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	background: #FF4081;
+	color: #FFFFFF;
+	display: block;
+	font-size: 36px;
+	cursor: pointer;
+	box-sizing: content-box;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.mdRoundedButton:hover{
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+	box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
+}
+
+.addQuestion{
+	position: absolute;
+	bottom: -25px;
+	left: 175px;
 }
 
 #page-wrap{
@@ -123,6 +148,9 @@ footer a{
     justify-content: center;
     -webkit-align-items: flex-start;
    	align-items: flex-start;
+   	-webkit-flex-wrap: wrap;
+   	flex-wrap: wrap;
+   	overflow: auto;
 }
 .search{
 	width: 100%;
@@ -144,7 +172,7 @@ footer a{
 	height: 180px;
 	background: #FFFFFF;
 	color: #212121;
-	margin: 0px 5px;
+	margin: 5px;
 	padding: 10px;
 	-webkit-border-radius: 2px;
   	border-radius: 2px;
@@ -163,7 +191,10 @@ footer a{
 }
 .card.big h1{ font-size: 30px;}
 .card.big p{ color: #727272; margin: 30px 0px;}
-
+.card.big div{ 
+	display: block;
+	margin: 20px 0px;
+}
 
 .author{ width: 100%; height: 100%;}
 .author img{
