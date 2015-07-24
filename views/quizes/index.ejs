@@ -6,6 +6,9 @@
 		<a class="card" href="/quizes/<%=quizes[i].id %>"> 
 			<span><%= quizes[i].pregunta %></span>
 			<a href="/quizes/<%=quizes[i].id %>/edit" class="mdRoundedButton small cardActions">E</a>
+			<form class="reset" action="/quizes/<%=quizes[i].id %>?_method=delete" method="post">
+				<button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');" class="mdRoundedButton small cardActions">X</button>
+			</form>
 		</a>
 	<% } %>
 </div>
