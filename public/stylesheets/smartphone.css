@@ -27,3 +27,7 @@ footer{
 	line-height: 35px;
 }
 .author img{ width: 180px; }
+.addQuestion {
+    bottom: 5px;
+    left: 15px;
+}

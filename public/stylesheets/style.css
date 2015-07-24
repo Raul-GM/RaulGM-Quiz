@@ -41,7 +41,7 @@ header{
 header h2,
 header form{ margin: 0 20px; }
 header form input{ margin-left: 10px; }
-
+i{ display: block; }
 .mdText{
 	background: transparent;
 	border: none;
@@ -86,7 +86,12 @@ header form input{ margin-left: 10px; }
 	-webkit-box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 	box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 }
-
+.mdRoundedButton.cardActions{
+	margin: 0px 3px;
+	position: relative;
+	top: 15px;
+	right: 90px;
+}
 .addQuestion{
 	position: absolute;
 	bottom: -25px;
