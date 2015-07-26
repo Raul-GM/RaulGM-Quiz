@@ -12,7 +12,6 @@ exports.load = function(req, res, next, quizId){
 
 //GET /quizes
 exports.index = function(req, res){
-	console.log("INDEX!!!");
 	models.Quiz.findAll().then(function(quizes){
 		res.render('quizes/index', { quizes: quizes, resultado: '', errors: []});
 	}).catch(function(error){next(error);})
@@ -34,7 +33,6 @@ exports.answer = function(req, res){
 
 //Búsqueda de preguntas
 exports.search = function(req, res){
-	console.log("BÚSQUEDA DE PREGUNTAS: " + req.query.search);
 	var busqueda = '%'+req.query.search.replace(/ /g, '%')+'%';
 
 	models.Quiz.findAll({
@@ -66,7 +64,7 @@ exports.create = function(req, res){
 		if(err){
 			res.render('quizes/new', {quiz: quiz, errors: err.errors});
 		}else{
-			quiz.save({fields:["pregunta", "respuesta"]}).then(function(){
+			quiz.save({fields:["pregunta", "respuesta", "tema"]}).then(function(){
 				res.redirect('/quizes');
 			})
 		}
@@ -84,13 +82,13 @@ exports.edit = function(req, res){
 exports.update = function(req, res){
 	req.quiz.pregunta = req.body.quiz.pregunta;
 	req.quiz.respuesta = req.body.quiz.respuesta;
-	console.log("----> UPDATE");
+	req.quiz.tema = req.body.quiz.tema;
 	req.quiz.validate().then(function(err){
 		console.log(err);
 		if(err){
 			res.render('quizes/edit', {quiz: req.quiz, errors: err.errors});
 		}else{
-			req.quiz.save({fields:["pregunta", "respuesta"]}).then(function(){
+			req.quiz.save({fields:["pregunta", "respuesta", "tema"]}).then(function(){
 				res.redirect('/quizes');
 			})
 		}

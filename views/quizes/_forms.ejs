@@ -7,6 +7,19 @@
 	<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" class="mdText dark">
 </div>
 <div>
+	<label for="tema">Tema:</label>
+	<select name="quiz[tema]">
+		<option value="historia" <% if(quiz.tema == "historia"){ %> selected <% } %>>Historia</option>
+		<option value="arte" <% if(quiz.tema == "arte"){ %> selected <% } %>>Arte</option>
+		<option value="tecnologia" <% if(quiz.tema == "tecnologia"){ %> selected <% } %>>Tecnología</option>
+		<option value="ciencia" <% if(quiz.tema == "ciencia"){ %> selected <% } %>>Ciencia</option>
+		<option value="deporte" <% if(quiz.tema == "deporte"){ %> selected <% } %>>Deporte</option>
+		<option value="actualidad" <% if(quiz.tema == "actualidad"){ %> selected <% } %>>Actualidad</option>
+		<option value="geografia" <% if(quiz.tema == "geografia"){ %> selected <% } %>>Geografía</option>
+		<option value="otros" <% if(quiz.tema == "otros"){ %> selected <% } %>>Otros</option>
+	</select>
+</div>
+<div>
 	<a href="/quizes" class="mdFlatButton">Cancelar</a>
 	<input type="submit" value="Guardar" class="mdFlatButton"/>
 </div>

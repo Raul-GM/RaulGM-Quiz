@@ -23,9 +23,10 @@ router.delete('/quizes/:quizId(\\d+)', 			quizController.destroy);
 
 router.get('/author', function(req, res, next) {
   res.render('author', { 
-  	name: 'RaúlGM' ,
-  	web: 'www.raul-gm.com',
-  	avatar: 'avatar.jpg'
+  	name: 			'RaúlGM' ,
+  	web: 			'www.raul-gm.com',
+  	avatar: 		'avatar.jpg',
+  	errors: 		[]
   });
 });
 

@@ -89,8 +89,7 @@ i{ display: block; }
 .mdRoundedButton.cardActions{
 	margin: 0px 3px;
 	position: relative;
-	top: 15px;
-	right: 90px;
+	z-index: 200;
 }
 .addQuestion{
 	position: absolute;
@@ -180,6 +179,8 @@ footer a{
     justify-content: center;
     -webkit-align-items: center;
    	align-items: center;
+   	cursor: pointer;
+   	position: relative;
 	width: 250px;
 	height: 180px;
 	background: #FFFFFF;
@@ -191,7 +192,23 @@ footer a{
   	-webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
   	box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
-.card a{ color: #FF4081; }
+.card span{ color: #FF4081; }
+.card .actions{
+	position: absolute;
+	display: -webkit-inline-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-inline-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-inline-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: inline-flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	right: 10px;
+}
+.card .hashtag{
+	position: absolute;
+	left:10px;
+	bottom: 10px;
+	font-size: 14px;
+	color: #727272!important;
+	margin: 0px!important;
+}
 .card.big{
 	width: 80%;
 	height: 80%;
@@ -200,7 +217,9 @@ footer a{
 	-ms-flex-direction: column;
 	-webkit-flex-direction: column;
 	flex-direction: column;
+	cursor: default;
 }
+.card.big form{ height: initial;}
 .card.big h1{ font-size: 30px;}
 .card.big p{ color: #727272; margin: 30px 0px;}
 .card.big div{ 
