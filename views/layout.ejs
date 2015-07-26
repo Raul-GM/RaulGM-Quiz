@@ -16,6 +16,11 @@
 				<input type="text" class="mdText" placeholder="Pregunta a buscar" name="search" value="" autocomplete="off">
 				<input type="submit" class="mdFlatButton" value="Buscar"/>
 			</form>
+			<% if(!session.user){ %>
+				<span><a href="/login">Login</a></span>
+			<% }else{ %>	
+				<span><%= session.user.username %> <a href="/logout">Logout</a></span>
+			<% } %>
 		</header>
 		<div id="page-wrap">
 			<nav class="main" id"n1" role="navigation">
