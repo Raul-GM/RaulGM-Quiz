@@ -10,5 +10,12 @@
 			<a href="/quizes" class="mdFlatButton">Cancelar</a>	
 		</div>
 		<p class="hashtag">#<%= quiz.tema %></p>
+		<div class="comments">
+			<p><a href="/quizes/<%= quiz.id %>/comments/new" class="mdFlatButton">Nuevo comentario</a></p>
+			<h1>Comentarios:</h1>
+			<% for(index in quiz.Comments){ %>
+				<p>- <%= quiz.Comments[index].texto %></p>
+			<% } %>
+		</div>
 	</div>
 </form>

@@ -1,0 +1,13 @@
+<div class="card big">
+	<h1>Añadir comentario:</h1> 
+	<form action="/quizes/<%=quizId%>/comments" method="post">
+		<div>
+			<label for="comm">Comentario:</label>
+			<input type="text" id="comm" name="comment[texto]" value="" class="mdText dark" placeholder="Intriduce un comentario">
+		</div>
+		<div>
+			<a href="/quizes/<%=quizId%>" class="mdFlatButton">Cancelar</a>
+			<input type="submit" value="Enviar" class="mdFlatButton"/>
+		</div>
+	</form>
+</div>
