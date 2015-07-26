@@ -5,15 +5,19 @@
 	<% 	var i; for(i=0;i<quizes.length; i++){ %>
 	<div class="card" onClick="document.location.href = '/quizes/<%=quizes[i].id %>'">
 		<span><%= quizes[i].pregunta %></span>
-		<div class="actions">
-			<a href="/quizes/<%=quizes[i].id %>/edit" class="mdRoundedButton small cardActions"><i class="flaticon-edit45"></i></a>
-			<form class="reset" action="/quizes/<%=quizes[i].id %>?_method=delete" method="post">
-				<button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');" class="mdRoundedButton small cardActions"><i class="flaticon-rubbish7"></i></button>
-			</form>
-		</div>
+		<% if(session.user){ %>
+			<div class="actions">
+				<a href="/quizes/<%=quizes[i].id %>/edit" class="mdRoundedButton small cardActions"><i class="flaticon-edit45"></i></a>
+				<form class="reset" action="/quizes/<%=quizes[i].id %>?_method=delete" method="post">
+					<button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');" class="mdRoundedButton small cardActions"><i class="flaticon-rubbish7"></i></button>
+				</form>
+			</div>
+		<% } %>
 		<p class="hashtag">#<%= quizes[i].tema %></p>
 	</div>
 		
 	<% } %>
 </div>
-<a href="/quizes/new" class="mdRoundedButton addQuestion">+</a>
+<% if(session.user){ %>
+	<a href="/quizes/new" class="mdRoundedButton addQuestion">+</a>
+<% } %>
