@@ -14,7 +14,12 @@
 			<p><a href="/quizes/<%= quiz.id %>/comments/new" class="mdFlatButton">Nuevo comentario</a></p>
 			<h1>Comentarios:</h1>
 			<% for(index in quiz.Comments){ %>
-				<p>- <%= quiz.Comments[index].texto %></p>
+				<% if(quiz.Comments[index].publicado || session.user){ %>
+					<p>- <%= quiz.Comments[index].texto %></p>
+					<% if(!quiz.Comments[index].publicado && session.user){ %>
+						<a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish" class="mdFlatButton"> Publicar</a>
+					<% } %>	
+				<% } %>
 			<% } %>
 		</div>
 	</div>

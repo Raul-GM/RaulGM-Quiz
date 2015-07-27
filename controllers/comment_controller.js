@@ -1,5 +1,17 @@
 var models = require('../models/models.js');
 
+//AUTOLOAD: Factoriza el çódsigo si la ruta inlucye :quizId
+exports.load = function(req, res, next, commentId){
+	models.Comment.find({
+		where: {id: Number(commentId) }
+	}).then(function(comment){
+		if(comment){
+			req.comment = comment;
+			next();
+		}else{ next(new Error('No existe el comentario -> ' + commentId)); }
+	}).catch(function(error){next(error);})
+};
+
 // GET Nuevo comentario
 exports.new = function(req, res){
 	res.render('comments/new',{quizId: req.params.quizId, errors:[]});
@@ -18,5 +30,12 @@ exports.create = function(req, res){
 				res.redirect('/quizes/'+req.params.quizId)
 			})
 		}
+	}).catch(function(error){next(error)});
+};
+
+exports.publish = function(req, res){
+	req.comment.publicado = true;
+	req.comment.save({ fields: ["publicado"]}).then(function(){
+		res.redirect('/quizes/'+req.params.quizId)
 	}).catch(function(error){next(error)});
 };
