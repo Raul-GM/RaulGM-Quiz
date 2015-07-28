@@ -29,19 +29,85 @@ header{
 	z-index: 20;
 	height: 60px;
 	position: relative;
-	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+}
+header .wrapper{
+	margin-left: 20px;
+    width: calc(100% - 40px);
+    height: 100%;
+}
+header h2{
+	float: left;
+    white-space: nowrap;
+    line-height: 60px;
+}
+header form{ 
+	float: left;
+    height: 60px;
+    width: calc(100% - 240px);
+}
+header form input{ margin-left: 10px; }
+header .login{
+	float: right;
+    height: 60px;
+    width: 80px;
+    text-align: center;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
 	display: -ms-flexbox;  /* TWEENER - IE 10 */
 	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
 	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
-	-webkit-justify-content: space-between; /* Safari 6.1+ */
-    justify-content: space-between;
-    -webkit-align-items: center;
-   	align-items: center;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-around; /* Safari 6.1+ */
+    justify-content: space-around;
+    color: #B6B6B6;
 }
-header h2,
-header form{ margin: 0 20px; }
-header form input{ margin-left: 10px; }
+header .login a{
+	color:#FFFFFF;
+}
 i{ display: block; }
+.mdSearch{ 
+	position: relative;
+}
+.mdSearch input[type="text"]{
+	display: block;
+    padding: 8px 8px 8px 72px;
+    margin: 15px 0px 15px 20px;
+    box-shadow: 0px 1px 1.5px rgba(0,0,0,0.06),0px 1px 1px rgba(0,0,0,0.12);
+    background: #2196F3;
+	width: calc(100% - 100px);
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    border: none;
+    font-size: 16px;
+    appearance: textfield;
+    font-weight: 300;
+    outline: none;
+    border-radius: 3px;
+}
+.mdSearch:hover input[type="text"]{ background: #BBDEFB; }
+.mdSearch input[type="text"]:focus{
+	background: #FFFFFF; 
+	color: #212121;
+}
+.mdSearch input[type="text"]::-webkit-input-placeholder {color: #727272;}
+.mdSearch input[type="text"]:-moz-placeholder { color: #727272; }
+.mdSearch input[type="text"]::-moz-placeholder { color: #727272; }
+.mdSearch input[type="text"]:-ms-input-placeholder { color: #727272; }
+.mdSearch button{
+	position: absolute;
+	display: block;
+	border: none;
+    font-size: 16px;
+    font-weight: 300;
+    outline: none;
+    background: transparent;
+    color: #727272;
+    top: 3px;
+    left: 40px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
 .mdText{
 	background: transparent;
 	border: none;
@@ -96,6 +162,11 @@ i{ display: block; }
 	bottom: -25px;
 	left: 175px;
 }
+.addComment{
+	position: absolute;
+    right: 20px;
+    top: 20px;
+}
 
 #page-wrap{
 	display: block;
@@ -127,6 +198,7 @@ section {
 	margin: 20px;
   	text-align: center;
   	color: #FFFFFF;
+  	overflow: auto;
 }
 section .subtitle{ color: #BBDEFB; }
 section form{width:100%; height: 100%;}
@@ -161,7 +233,7 @@ footer a{
    	align-items: flex-start;
    	-webkit-flex-wrap: wrap;
    	flex-wrap: wrap;
-   	overflow: auto;
+   	
 }
 .search{
 	width: 100%;
@@ -211,7 +283,7 @@ footer a{
 }
 .card.big{
 	width: 80%;
-	height: 80%;
+	height: 70%;
 	max-height: 450px;
 	max-width: 450px;
 	-ms-flex-direction: column;
@@ -226,6 +298,22 @@ footer a{
 	display: block;
 	margin: 20px 0px;
 }
+.card.big.comments p{
+	margin: 10px 0px;
+    width: 100%;
+    text-align: center;
+}
+.card.big.comments p span{
+	color: #727272;
+    display: inline-block;
+}
+.card.big.comments p a{
+	display: inline-block;
+	color: #B6B6B6;
+}
+.card.big.comments p a:hover{
+	color: #212121;
+}
 
 .author{ width: 100%; height: 100%;}
 .author img{
@@ -233,18 +321,3 @@ footer a{
 	margin-bottom: 20px;
 }
 .author a{ color: #FF4081;}
-::-webkit-input-placeholder {
-   color: #B6B6B6;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #B6B6B6;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #B6B6B6;  
-}
-
-:-ms-input-placeholder {  
-   color: #B6B6B6;  
-}

@@ -10,17 +10,20 @@
 			<a href="/quizes" class="mdFlatButton">Cancelar</a>	
 		</div>
 		<p class="hashtag">#<%= quiz.tema %></p>
-		<div class="comments">
-			<p><a href="/quizes/<%= quiz.id %>/comments/new" class="mdFlatButton">Nuevo comentario</a></p>
+		
+	</div>
+	<div class="card big comments">
+			<a href="/quizes/<%= quiz.id %>/comments/new" class="mdRoundedButton addComment">+</a>
 			<h1>Comentarios:</h1>
 			<% for(index in quiz.Comments){ %>
 				<% if(quiz.Comments[index].publicado || session.user){ %>
-					<p>- <%= quiz.Comments[index].texto %></p>
-					<% if(!quiz.Comments[index].publicado && session.user){ %>
-						<a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish" class="mdFlatButton"> Publicar</a>
-					<% } %>	
+					<p>
+						<span>- <%= quiz.Comments[index].texto %></span>
+						<% if(!quiz.Comments[index].publicado && session.user){ %>
+							<a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[index].id %>/publish"> <i class="flaticon-speaker122"></i></a>
+						<% } %>	
+					</p>
 				<% } %>
 			<% } %>
 		</div>
-	</div>
 </form>

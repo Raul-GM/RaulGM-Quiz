@@ -6,6 +6,21 @@ header{
     justify-content: space-around;
 }
 header h2{ font-size: 18px; }
+header .login{
+	top: 0px;
+    position: absolute;
+    right: 0px;
+}
+header form{
+	clear: both;
+    float: left;
+    width: 100%;
+}
+header .mdSearch input[type="text"]{
+	margin: 15px 0px 15px 0px;
+    width: calc(100% - 80px);
+}
+header .mdSearch button { left: 20px; }
 .mdText{ font-size: 12px; }
 .mdFlatButton{ font-size: 14px; }
 h2 span, section h3{ display: none; }

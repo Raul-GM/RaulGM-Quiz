@@ -11,11 +11,17 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-    font-size: 18px;
-	font-style: normal;
+        font-size: 20px;
+font-style: normal;
 }.flaticon-edit45:before {
 	content: "\e000";
 }
-.flaticon-rubbish7:before {
+.flaticon-magnifier12:before {
 	content: "\e001";
+}
+.flaticon-rubbish7:before {
+	content: "\e002";
+}
+.flaticon-speaker122:before {
+	content: "\e003";
 }
