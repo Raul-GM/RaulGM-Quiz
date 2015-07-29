@@ -108,3 +108,12 @@ exports.destroy = function(req, res){
 		next(error);
 	});
 };
+
+exports.author = function(req, res, next) {
+  res.render('author', { 
+  	name: 			'RaúlGM' ,
+  	web: 			'www.raul-gm.com',
+  	avatar: 		'avatar.jpg',
+  	errors: 		[]
+  });
+};

@@ -1,3 +1,6 @@
+var expirationTime = 5000;
+var activityTime;
+
 //Autorización de accesos HTTP restringidos
 exports.loginRequired = function(req, res, next){
 	if(req.session.user){
@@ -32,7 +35,8 @@ exports.create = function(req, res){
 		//Crear req.session.user y guardar los campos id y username
 		//La sesión se defina por la existencia de req.session.user
 		req.session.user = {id:user.id, username:user.username};
-
+		//GUARDAMOS LA FECHA DEL LOGIN
+		activityTime = new Date();
 		res.redirect(req.session.redir); // -> Redirecciona al path anterior al login
 	});
 };
@@ -42,3 +46,27 @@ exports.destroy = function(req, res){
 	delete req.session.user;
 	res.redirect(req.session.redir); // -> Redirecciona al path anterior al login
 };
+
+//AUTOLOGOUT
+exports.autologout = function(req, res, next){
+	if(!req.session.user){ //NO ESTÁ LOGADO
+		next();
+	}else{
+		var now = new Date();
+		activityTime.setMilliseconds(activityTime.getMilliseconds() + expirationTime);
+		
+		if(now>activityTime){
+			delete req.session.user;
+			req.session.errors = [{"message": "Se ha cerrado la sesión por inactividad."}];
+			res.redirect('/login');
+			return;
+		}else{
+			next();
+		}
+	}
+};
+
+exports.updateActivity = function(req, res,next){
+	activityTime = new Date();
+	next();
+}

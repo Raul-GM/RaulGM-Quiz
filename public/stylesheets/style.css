@@ -195,13 +195,27 @@ nav span a{
 nav span a:active{ color: #FFFFFF; }
 
 section { 
-	margin: 20px;
+	padding: 20px;
   	text-align: center;
   	color: #FFFFFF;
   	overflow: auto;
 }
 section .subtitle{ color: #BBDEFB; }
-section form{width:100%; height: auto;}
+section form.main{
+	width:100%; 
+	height: auto;
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-webkit-justify-content: center; /* Safari 6.1+ */
+    justify-content: center;
+    -webkit-align-items: center;
+   	align-items: center;
+   	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
 form.reset{ width: 0%; height: 0%; }
 footer{ 
 	background: #FFFFFF; 
@@ -215,7 +229,44 @@ footer a{
 	margin: 0px 10px;
 }
 
-#ErrorMsgs           { color: #f61; font-size: smaler}
+#ErrorMsgs{ 
+	color: #FFFFFF;
+    font-size: smaller;
+    background-color: #FF4081;
+    position: relative;
+    margin-top: -100px;
+    margin-bottom: 30px;
+    width: calc(100% + 40px);
+    left: -20px;
+    box-shadow: 0 0 2px rgba(0,0,0,.14),0 2px 2px rgba(0,0,0,.28);
+    padding: 10px 0;
+    height: 50px;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-webkit-justify-content: center; /* Safari 6.1+ */
+    justify-content: center;
+    -webkit-align-items: center;
+   	align-items: center;
+   	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	z-index: -1;
+}
+#ErrorMsgs.open{
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: example;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {margin-top: -100px}
+    to {margin-top: -20px;}
+}
 .right 				 {float: right;}
 
 .quiz_img 			 { height: 150px; float: left;}
