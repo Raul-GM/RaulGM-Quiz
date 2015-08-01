@@ -4,6 +4,7 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
 var sessionController = require('../controllers/session_controller');
+var staticsController = require('../controllers/statics_controller');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,10 +31,16 @@ router.get('/quizes/:quizId(\\d+)/edit',		 		sessionController.autologout, sessi
 router.put('/quizes/:quizId(\\d+)', 					sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired, quizController.update);
 router.delete('/quizes/:quizId(\\d+)',		 			sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired, quizController.destroy);
 
+//Comentarios
 router.get('/quizes/:quizId(\\d+)\/comments/new', 		sessionController.updateActivity, commentController.new);
 router.post('/quizes/:quizId(\\d+)\/comments', 			sessionController.updateActivity, commentController.create);
 router.get('/quizes/:quizId(\\d+)\/comments/:commentId(\\d+)/publish', 		sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired, commentController.publish);
 
+//Estadísticas
+// router.get('/quizes/statics', 							sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired, staticsController.index);
+router.get('/quizes/statics', 							staticsController.index);
+
+//Créditos
 router.get('/author', 									sessionController.updateActivity, quizController.author);
 
 //Búsqueda de preguntas

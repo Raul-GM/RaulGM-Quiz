@@ -373,3 +373,46 @@ footer a{
 	margin-bottom: 20px;
 }
 .author a{ color: #FF4081;}
+.statics{
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: center; /* Safari 6.1+ */
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+   	flex-wrap: wrap;
+}
+.statics .card{
+	width: 180px;
+	height: 200px;
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: flex-end; /* Safari 6.1+ */
+    justify-content: flex-end;
+    -webkit-align-items: center;
+    align-items: center;
+	cursor: default;
+	padding: 0px;
+}
+.statics .card h4{
+	position: absolute;
+    top: 0px;
+    padding: 10px;
+    background: #1976D2;
+    color: #ffffff;
+    border-radius: 2px 2px 0 0;
+}
+.statics .card p{
+	font-size: 66px;
+	color: #BBDEFB;
+	padding-bottom: 20px;
+}

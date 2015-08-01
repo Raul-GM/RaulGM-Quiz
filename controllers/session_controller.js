@@ -1,4 +1,4 @@
-var expirationTime = 5000;
+var expirationTime = 120000;
 
 //Autorización de accesos HTTP restringidos
 exports.loginRequired = function(req, res, next){
