@@ -38,7 +38,7 @@ router.get('/quizes/:quizId(\\d+)\/comments/:commentId(\\d+)/publish', 		session
 
 //Estadísticas
 // router.get('/quizes/statics', 							sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired, staticsController.index);
-router.get('/quizes/statics', 							staticsController.index);
+router.get('/quizes/statics', 							sessionController.autologout, sessionController.updateActivity, sessionController.loginRequired,staticsController.index);
 
 //Créditos
 router.get('/author', 									sessionController.updateActivity, quizController.author);
