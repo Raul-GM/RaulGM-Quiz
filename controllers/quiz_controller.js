@@ -102,11 +102,14 @@ exports.update = function(req, res){
 
 // GET /quizes/new
 exports.destroy = function(req, res){
-	req.quiz.destroy().then(function(){
-		res.redirect('/quizes');
-	}).catch(function(error){
-		next(error);
-	});
+	console.log("------> " + req.quiz.id);
+	models.Comment.destroy({
+		where: {QuizId: req.quiz.id}
+	}).then(function(){
+		req.quiz.destroy().then(function(){
+			res.redirect('/quizes');
+		}).catch(function(error){ next(error); });
+	}).catch(function(error){ next(error); });
 };
 
 exports.author = function(req, res, next) {
